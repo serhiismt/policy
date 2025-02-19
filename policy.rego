@@ -1,5 +1,7 @@
 package example
 
+import future.keywords.in
+
 roles contains role.id if {
     some org in input.user.organizations
     org.id == input.resource.organization_id
