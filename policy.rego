@@ -2,7 +2,7 @@ package example
 
 import future.keywords.in
 
-roles contains role.id if {
+org_roles contains role.id if {
     some org in input.user.organizations
     org.id == input.resource.organization_id
     some role in org.roles
@@ -10,7 +10,7 @@ roles contains role.id if {
 
 permissions contains permission if {
     some role in data.roles
-    role.id in roles
+    role.id in org_roles
     some permission in role.permissions
 }
 
