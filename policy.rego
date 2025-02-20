@@ -8,17 +8,20 @@ roles contains role.id if {
     some role in org.roles
 }
 
+matched_roles = roles if {
+    some role in data.roles.role
+    role.id in roles
+}
+
 permissions contains permission if {
     some role in data.roles.role
-    print(role)
     role.id in roles
-    print(role.permissions)
     some permission in role.permissions
 }
 
 default allow := false
 
-allow := true if {
+allow111 := true if {
     some permission in permissions
     permission == input.resource.permission
 }
