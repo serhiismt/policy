@@ -9,7 +9,7 @@ roles contains role.id if {
 }
 
 permissions contains permission if {
-    some role in data.roles
+    some role in data.roles.role
     role.id in roles
     some permission in role.permissions
 }
