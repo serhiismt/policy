@@ -10,7 +10,9 @@ roles contains role.id if {
 
 permissions contains permission if {
     some role in data.roles.role
+    print(role)
     role.id in roles
+    print(role.permissions)
     some permission in role.permissions
 }
 
